@@ -1,0 +1,19 @@
+{
+    "name": "edalzell/private-eye",
+    "autoload": {
+        "psr-4": {
+            "Edalzell\\PrivateEye\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Private Eye",
+            "description": "Allows viewing and downloading of private assets"
+        },
+        "laravel": {
+            "providers": [
+                "Edalzell\\PrivateEye\\ServiceProvider"
+            ]
+        }
+    }
+}
