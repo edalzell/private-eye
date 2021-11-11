@@ -6,10 +6,10 @@ class DownloadController extends BaseController
 {
     public function __invoke(string $code)
     {
-        if (! file_exists($path = $this->asset($code)->resolvedPath())) {
+        if (($asset = $this->asset($code)) && ! $asset->exists()) {
             return back()->withErrors('File not found', 'download');
         }
 
-        return response()->download($path);
+        return $asset->disk()->filesystem()->download($asset->path());
     }
 }
